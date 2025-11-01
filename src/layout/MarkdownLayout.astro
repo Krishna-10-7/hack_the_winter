@@ -1,0 +1,32 @@
+---
+import PageLayout from "./PageLayout.astro";
+
+interface Props {
+	frontmatter: {
+		title?: string;
+		description?: string;
+		bodyClass?: string;
+	};
+}
+
+const { frontmatter } = Astro.props as Props;
+---
+
+<PageLayout title={frontmatter?.title} bodyClass={frontmatter?.bodyClass}>
+	<article
+		class:list={[
+			"min-w-full",
+			"prose prose-neutral prose-invert",
+			"prose-headings:font-angry prose-headings:italic prose-headings:tracking-widest prose-headings:text-shadow-lg/50",
+			"prose-h1:text-5xl sm:prose-h1:text-6xl md:prose-h1:text-7xl lg:prose-h1:text-8xl xl:prose-h1:text-9xl",
+			"prose-h2:text-4xl sm:prose-h2:text-5xl md:prose-h2:text-6xl lg:prose-h2:text-7xl xl:prose-h2:text-8xl",
+			"prose-h3:text-3xl sm:prose-h3:text-4xl md:prose-h3:text-5xl lg:prose-h3:text-6xl xl:prose-h3:text-7xl",
+			"prose-h4:text-2xl sm:prose-h4:text-3xl md:prose-h4:text-4xl lg:prose-h4:text-5xl xl:prose-h4:text-6xl",
+			"prose-h5:text-xl sm:prose-h5:text-2xl md:prose-h5:text-3xl lg:prose-h5:text-4xl xl:prose-h5:text-5xl",
+			"prose-h6:text-lg sm:prose-h6:text-xl md:prose-h6:text-2xl lg:prose-h6:text-3xl xl:prose-h6:text-4xl",
+			"prose-p:text-base sm:prose-p:text-lg md:prose-p:text-xl lg:prose-p:text-2xl xl:prose-p:text-3xl",
+		]}
+	>
+		<slot />
+	</article>
+</PageLayout>

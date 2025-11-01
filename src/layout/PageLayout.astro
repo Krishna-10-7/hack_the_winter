@@ -34,7 +34,11 @@ const { class: className, bodyClass, ...props } = Astro.props;
 </BaseLayout>
 
 <style>
-	body::before {
+	html {
+		position: relative;
+		height: auto;
+	}
+	html::before {
 		content: "";
 		position: absolute;
 		top: 0;
