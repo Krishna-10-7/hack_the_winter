@@ -1,32 +1,40 @@
 ---
-import { Image } from "astro:assets";
-
-import Red from "@/assets/animated/red.webp";
-import StaticRed from "@/assets/animated/red_static.png";
-
-import Chuck from "@/assets/animated/chuck.webp";
-import StaticChuck from "@/assets/animated/chuck_static.png";
-
-import Blues from "@/assets/animated/blues.webp";
-import StaticBlues from "@/assets/animated/blues_static.png";
-
-import Stella from "@/assets/animated/stella.webp";
-import StaticStella from "@/assets/animated/stella_static.png";
-
-import Leonard from "@/assets/animated/leonard.webp";
-import StaticLeonard from "@/assets/animated/leonard_static.png";
-
-import Bomb from "@/assets/animated/bomb.webp";
-import StaticBomb from "@/assets/animated/bomb_static.png";
-
 const menus = [
-	{ title: "Home", src: Red, cover: StaticRed, href: "/home/" },
-	{ title: "Timeline", src: Chuck, cover: StaticChuck, href: "/timeline/" },
-	{ title: "Rules", src: Blues, cover: StaticBlues, href: "/rules/" },
-	{ title: "FAQs", src: Stella, cover: StaticStella, href: "/faqs/" },
-	{ title: "Sponsor", src: Leonard, cover: StaticLeonard, href: "/sponsor/" },
-	{ title: "About", src: Bomb, cover: StaticBomb, href: "/about/" },
+	{
+		title: "Home",
+		src: "/animated/red.webm",
+		href: "/home/",
+	},
+	{
+		title: "Timeline",
+		src: "/animated/chuck.webm",
+		href: "/timeline/",
+	},
+	{
+		title: "Rules",
+		src: "/animated/blues.webm",
+		href: "/rules/",
+	},
+	{
+		title: "FAQs",
+		src: "/animated/stella.webm",
+		href: "/faqs/",
+	},
+	{
+		title: "Sponsor",
+		src: "/animated/leonard.webm",
+		href: "/sponsor/",
+	},
+	{
+		title: "About",
+		src: "/animated/bomb.webm",
+		href: "/about/",
+	},
 ];
+
+function isCurrentPage(href: string) {
+	return Astro.url.pathname === href;
+}
 ---
 
 <nav
@@ -36,28 +44,19 @@ const menus = [
 	{
 		menus.map((menu) => (
 			<a
-				href={menu.href}
-				class="flex flex-col align-middle items-center mb-8 group"
+				href={isCurrentPage(menu.href) ? null : menu.href}
+				class="flex flex-col align-middle items-center mb-8"
 			>
-				<div class="relative">
-					<Image
-						src={menu.src}
-						alt={`${menu.title} Image`}
-						class:list={[
-							"h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 xl:h-36 xl:w-36 object-contain",
-							"absolute top-0 left-0",
-							"invisible group-hover:visible group-focus-visible:visible",
-						]}
-					/>
-					<Image
-						src={menu.cover}
-						alt={`${menu.title} Image`}
-						class:list={[
-							"h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 xl:h-36 xl:w-36 object-contain",
-							"group-hover:invisible group-focus-visible:invisible",
-						]}
-					/>
-				</div>
+				<video
+					src={menu.src}
+					muted
+					playsinline
+					preload="metadata"
+					class="h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 xl:h-36 xl:w-36 object-contain"
+					data-current={isCurrentPage(menu.href)}
+				>
+					Your browser does not support the video tag.
+				</video>
 
 				<p class="text-center font-angry text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-wider text-shadow-lg/50">
 					{menu.title}
@@ -66,3 +65,41 @@ const menus = [
 		))
 	}
 </nav>
+
+<script>
+	const setupNavVideoHover = () => {
+		const links = document.querySelectorAll("nav a");
+		links.forEach((link) => {
+			const video = link.querySelector("video");
+			if (!(video instanceof HTMLVideoElement)) return;
+
+			const play = () => {
+				video.loop = true;
+				video.play().catch(() => {});
+			};
+			const pause = () => {
+				video.loop = false;
+				video.pause();
+			};
+
+			if (link.querySelector("video")?.dataset.current === "true") {
+				video.play();
+			} else {
+				pause();
+			}
+
+			link.addEventListener("mouseenter", play);
+			link.addEventListener("mouseleave", pause);
+			// Accessibility: support keyboard navigation
+			link.addEventListener("focusin", play);
+			link.addEventListener("focusout", pause);
+		});
+	};
+
+	document.addEventListener("astro:after-swap", () => {
+		setupNavVideoHover();
+	});
+	document.addEventListener("DOMContentLoaded", () => {
+		setupNavVideoHover();
+	});
+</script>
