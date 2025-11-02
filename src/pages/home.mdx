@@ -4,9 +4,38 @@ title: "Home"
 bodyClass: "bg-radial from-red-900 from-25% via-red-950 via-75% to-black to-125%"
 ---
 
-# Hack The Winter
+import Image from "astro/components/Image.astro";
 
-Hack The Winter - The Second Wave (Angry Bird Edition)  is a 24 hour national-level hackathon aimed at encouraging innovation, creativity, and problem-solving among students and professionals. The hackathon will focus on solving real-world challenges through technology in domains such as sustainability, education, and smart automation.
+<h1 class="mb-0 text-center">Hack The Winter</h1>
+
+<h2 class="mt-0 mb-0 text-center">The Second Wave</h2>
+
+<h4 class="mt-0 text-center">(Angry Bird Edition)</h4>
+
+import Trio from "@/assets/images/trio_4.webp";
+
+{/* <Image
+    src={Trio}
+    alt="Angry Birds Trio"
+/> */}
+
+import Red from "@/assets/images/Red/red_concerned.webp";
+
+<div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5">
+    <div class="col-span-1 flex justify-center items-center">
+        <Image
+            src={Red}
+            alt="Red - The Angry Bird"
+            class="w-64 h-64 md:w-48 md:h-48 xl:w-64 xl:h-64 object-contain"
+        />
+    </div>
+
+    <div class="col-span-3 flex justify-center items-center align-middle">
+        Hack The Winter - The Second Wave (Angry Bird Edition) is a 24 hour national-level hackathon aimed at encouraging innovation, creativity, and problem-solving among students and professionals. The hackathon will focus on solving real-world challenges through technology in domains such as sustainability, education, and smart automation.
+    </div>
+</div>
+
+### What to Expect?
 
 We use wedded high quality questions for hackathon which are challenging but in a good way. These questions / problem statements are important to showcase your skills for the actual hackathon. The problem statements will be given at the time of hackathon or pre-released a few hours prior.
 
