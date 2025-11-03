@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import "@/styles/animations.css";
 import FullHeight from "@/components/pages/index/FullHeight.astro";
 import AnimatedContainer from "@/components/pages/index/AnimatedContainer.astro";
+import Timer from "@/components/pages/index/Timer.astro";
 
 import BigBrother from "@/assets/images/big_bro.png";
 import Flock from "@/assets/images/flock.png";
@@ -97,39 +98,7 @@ import Bomb from "@/assets/images/bomb/bomb.webp";
 				Coming Soon
 			</h2>
 
-			<div class="flex flex-row text-center justify-center font-angry">
-				<div class="flex flex-col">
-					<p class="text-5xl">12</p>
-					<p class="text-2xl">Days</p>
-				</div>
-
-				<div class="mx-4">
-					<p class="text-6xl">:</p>
-				</div>
-
-				<div class="flex flex-col">
-					<p class="text-5xl">12</p>
-					<p class="text-2xl">Hours</p>
-				</div>
-
-				<div class="mx-4">
-					<p class="text-6xl">:</p>
-				</div>
-
-				<div class="flex flex-col">
-					<p class="text-5xl">12</p>
-					<p class="text-2xl">Minutes</p>
-				</div>
-
-				<div class="mx-4">
-					<p class="text-6xl">:</p>
-				</div>
-
-				<div class="flex flex-col">
-					<p class="text-5xl">12</p>
-					<p class="text-2xl">Seconds</p>
-				</div>
-			</div>
+			<Timer />
 		</AnimatedContainer>
 
 		<AnimatedContainer image={Hal} align="left">

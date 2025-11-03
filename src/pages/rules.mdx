@@ -4,7 +4,86 @@ title: "Rules"
 bodyClass: "bg-radial from-cyan-900 from-25% via-cyan-950 via-75% to-black to-125%"
 ---
 
+import Image from "astro/components/Image.astro";
+
 # Rules
+
+## Stages
+
+import Blues from "@/assets/images/blues.webp";
+
+#### Round 1 - Online Prototype Submission (Elimination)
+
+<div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5">
+    <div class="col-span-1 flex flex-col justify-center items-center">
+        <Image
+            src={Blues}
+            alt="Blues"
+            class="w-64 h-64 md:w-64 md:h-64 xl:w-96 xl:h-96 object-contain"
+        />
+    </div>
+
+    <div class="col-span-3 flex flex-col justify-center items-center align-middle">
+
+    - Teams submit their ideas through the Unstop event portal, themes and problem statements will be given by us.
+    - Submission must include: problem statement, proposed solution, tech stack, and prototype plan.
+    - Duration: 7 days.
+    - Evaluation based on innovation, feasibility, and impact.
+    - Top 60% teams will advance to the next round.
+
+    </div>
+</div>
+
+import Hatchlings from "@/assets/images/hatchlings.webp";
+
+#### Round 2 - System Design Round (Elimination)
+
+<div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5">
+
+    <div class="col-span-3 flex flex-col justify-center items-center align-middle">
+
+    - Ensuring teams can think out of the box, and know how they can scale their system.
+    - This will be a round testing your cache, docker, load balancer, and LLD skills.
+    - Duration: 5 days.
+    - Evaluation based on innovation, feasibility, and impact.
+    - Top 100 teams will advance to the physical hackathon.
+
+    </div>
+
+    <div class="col-span-1 flex flex-col justify-center items-center">
+        <Image
+            src={Hatchlings}
+            alt="Hatchlings"
+            class="w-64 h-64 md:w-64 md:h-64 xl:w-96 xl:h-96 object-contain"
+        />
+    </div>
+
+</div>
+
+#### Round 3 - Onsite Hackathon (24 Hours)
+
+import Zach from "@/assets/images/zach.webp";
+
+<div class="w-full grid grid-cols-1 md:grid-cols-4 gap-5">
+    <div class="col-span-1 flex flex-col justify-center items-center">
+        <Image
+            src={Zach}
+            alt="Zach"
+            class="w-64 h-64 md:w-64 md:h-64 xl:w-96 xl:h-96 object-contain"
+        />
+    </div>
+
+    <div class="col-span-3 flex flex-col justify-center items-center align-middle">
+
+    - Teams will work continuously for 24 hours at the venue.
+    - Mentors and domain experts will be available for guidance.
+    - Mid-review checkpoints will be conducted at the 6th, 12th, 18th, and 24th hours to track progress.
+    - Teams must submit their final project along with a working demo and presentation.
+    
+    </div>
+</div>
+
+## General Rules:
 
 - Internet usage is allowed for references, but plagiarism leads to disqualification.
 - A.I. agents usages is prohibited.
