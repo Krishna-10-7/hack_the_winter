@@ -7,3 +7,19 @@
 
 	--font-sans: var(--font-noto-sans);
 }
+
+/* Make markdown tables horizontally scrollable with a scrollbar */
+@layer base {
+	.prose table {
+		display: block; /* allow overflow on table */
+		overflow-x: auto; /* show horizontal scrollbar when needed */
+		max-width: 100%;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-gutter: stable both-edges;
+	}
+
+	/* Prevent cells from wrapping so overflow triggers scrolling */
+	.prose th {
+		white-space: nowrap;
+	}
+}
