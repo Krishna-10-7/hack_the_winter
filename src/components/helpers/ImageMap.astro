@@ -1,0 +1,32 @@
+---
+import { getImage } from "astro:assets";
+
+interface Props {
+	src: ImageMetadata;
+	alt?: string;
+	class?: string;
+}
+
+const { src, alt } = Astro.props;
+
+const img = await getImage({ src, formats: ["webp"] });
+---
+
+<svg
+	version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox={`0 0 ${img.attributes.width} ${img.attributes.height}`}
+	class={Astro.props.class}
+>
+	{alt && <title>{alt}</title>}
+
+	<image
+		width={img.attributes.width}
+		height={img.attributes.height}
+		xlink:href={img.src}
+		decoding="async"
+	/>
+
+	<slot />
+</svg>

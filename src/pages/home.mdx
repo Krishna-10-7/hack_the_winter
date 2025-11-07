@@ -4,7 +4,7 @@ title: "Home"
 bodyClass: "bg-radial from-red-900 from-25% via-red-950 via-75% to-black to-125%"
 ---
 
-import Image from "astro/components/Image.astro";
+import { Image, ImageMap } from "@/components/helpers";
 
 <h1 class="mb-0 text-center">Hack The Winter</h1>
 
@@ -16,16 +16,18 @@ import Red from "@/assets/pages/home/register.png";
 
 <div class="w-full grid grid-cols-1 md:grid-cols-5 gap-5">
     <div class="col-span-2 flex flex-col justify-center items-center">
-        <a 
-            target="_blank"
-            href="https://unstop.com/p/hack-the-winter-the-second-wave-angry-bird-edition-graphic-era-hill-university-gehu-bhimtal-1571242"
+        <ImageMap
+            src={Red}
+            alt="Red - The Angry Birds"
+            class="w-64 h-64 md:w-64 md:h-64 xl:w-96 xl:h-96 object-contain"
         >
-            <Image
-                src={Red}
-                alt="Red - The Angry Birds"
-                class="w-64 h-64 md:w-64 md:h-64 xl:w-96 xl:h-96 object-contain"
-            />
-        </a>
+            <a 
+                target="_blank"
+                href="https://unstop.com/p/hack-the-winter-the-second-wave-angry-bird-edition-graphic-era-hill-university-gehu-bhimtal-1571242"
+            >
+                <rect x="517" y="533" fill="#fff" opacity="0" width="218" height="88"></rect>
+            </a>
+        </ImageMap>
     </div>
 
     <div class="col-span-3 flex justify-center items-center align-middle">
@@ -123,13 +125,15 @@ Register now on Unstop! Registration starts November 25th, 2025.
 
 import Register from "@/assets/pages/home/register_2.png";
 
-<a 
-    target="_blank"
-    href="https://unstop.com/p/hack-the-winter-the-second-wave-angry-bird-edition-graphic-era-hill-university-gehu-bhimtal-1571242"
+<ImageMap
+    src={Register}
+    alt="Register on Unstop"
+    class="w-full max-w-lg h-auto my-5 mx-auto object-contain"    
 >
-    <Image
-        src={Register}
-        alt="Register on Unstop"
-        class="w-full max-w-lg h-auto my-5 mx-auto object-contain"    
-    />
-</a>
+    <a 
+        target="_blank"
+        href="https://unstop.com/p/hack-the-winter-the-second-wave-angry-bird-edition-graphic-era-hill-university-gehu-bhimtal-1571242"
+    >
+        <rect x="462" y="0" fill="#fff" opacity="0" width="226" height="138"></rect>
+    </a>
+</ImageMap>
