@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import MasterMatilda from "@/assets/images/master_matilda.png";
+import BoardImage from "@/assets/images/board_img.png";
 // Statement image paths from public folder
 
 interface Statement {
@@ -215,7 +216,7 @@ export default function ProblemStatementReact() {
 				<div className="flex flex-col lg:flex-row justify-center items-end">
 					<div className="shrink-0 hidden lg:block relative z-10">
 						<img
-							src="/master_matilda.png"
+							src={MasterMatilda.src}
 							alt="Master Matilda"
 							className="w-[30rem] h-auto xl:w-[36rem] 2xl:w-[42rem]"
 						/>
@@ -224,7 +225,7 @@ export default function ProblemStatementReact() {
 					{/* Board with Problem Statements */}
 					<div className="relative shrink-0 lg:-ml-32 xl:-ml-40 2xl:-ml-48">
 						<img
-							src="/board_img.png"
+							src={BoardImage.src}
 							alt="Problem Statement Board"
 							className="w-full max-w-2xl xl:max-w-3xl h-auto"
 						/>
@@ -232,7 +233,7 @@ export default function ProblemStatementReact() {
 						{/* Master Matilda for Mobile - positioned on left side with overlap */}
 						<div className="absolute -bottom-48 -left-4 lg:hidden z-10">
 							<img
-								src="/master_matilda.png"
+								src={MasterMatilda.src}
 								alt="Master Matilda"
 								className="w-96 h-auto sm:w-[28rem]"
 							/>

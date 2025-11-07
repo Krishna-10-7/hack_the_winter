@@ -5,6 +5,7 @@ bodyClass: "bg-radial from-green-900 from-25% via-green-950 via-75% to-black to-
 ---
 
 import Image from "astro/components/Image.astro";
+import ClickableLeonard from "@/components/ClickableLeonard.tsx";
 
 # Sponsor
 
@@ -20,10 +21,11 @@ import Leonard from "@/assets/images/leonard.webp";
     </div>
 
     <div class="col-span-1 flex flex-col justify-center items-center">
-        <Image
-            src={Leonard}
+        <ClickableLeonard
+            src={Leonard.src}
             alt="Leonard"
-            class="w-64 h-auto md:w-64 md:h-auto xl:w-96 xl:h-auto object-contain m-0!"
+            className="w-64 h-auto md:w-64 md:h-auto xl:w-96 xl:h-auto object-contain m-0!"
+            client:load
         />
     </div>
 </div>
