@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# locks files except for pnpm-lock.yaml
+
+package-lock.json
+yarn.lock
