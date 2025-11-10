@@ -45,8 +45,32 @@ import StakePig from "@/assets/images/pigs/stake.png";
 </div>
 
 import BirdHunt from "@/components/pages/game/BirdHunt";
+import AngryBirdsGame from "@/components/pages/game/AngryBirdsGame";
 
 <div class="-mt-4">
     <BirdHunt client:load />
+</div>
+
+## Slingshot Challenge
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-8">
+    <div class="md:order-1">
+        <h3 class="text-2xl md:text-3xl font-bold text-blue-300 mb-4">Launch Birds with Physics!</h3>
+        <p class="text-lg text-white mb-4">
+            Use the slingshot to launch birds at the pig structures! 
+            Drag the bird back and release to send it flying with realistic physics.
+        </p>
+    </div>
+    <div class="flex justify-center md:order-2">
+        <Image
+            src={StakePig}
+            alt="Slingshot Game"
+            class="w-64 h-auto md:w-80 lg:w-96 object-contain"
+        />
+    </div>
+</div>
+
+<div class="-mt-4">
+    <AngryBirdsGame client:load />
 </div>
 
