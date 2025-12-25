@@ -22,32 +22,34 @@
 			{@const firstStatement = statements[0]}
 			{#if firstStatement.isTheme}
 				<!-- Simple Text Theme Display -->
-				<div class="text-center text-white px-4">
-					<p
-						class={[
-							"m-0!",
-							"drop-shadow-lg font-angry italic tracking-wide",
-							"text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl",
-						]}
-					>
-						 Themes for Round 1 & 2
-					</p>
-					<p
-						class={[
-							"text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl",
-							"drop-shadow-md mt-2 font-bold",
-							"leading-loose",
-						]}
-					>
-						Web / App<br />
-						Fintech<br />
-						AR / VR<br />
-						Governance<br />
-						Web3 / Blockchain<br />
-						AI / ML<br />
-						IoT & Automation<br />
-						Open Innovation
-					</p>
+				<div class="p-[6%] w-full h-full">
+					<div class="w-full h-full flex flex-col items-center justify-center overflow-hidden">
+						<p
+							class={[
+								"m-0!",
+								"drop-shadow-lg font-angry italic tracking-wide",
+								"text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl",
+							]}
+						>
+							Themes for Round 1 & 2
+						</p>
+						<p
+							class={[
+								"text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl",
+								"drop-shadow-md mt-1 font-bold text-center",
+								"leading-snug",
+							]}
+						>
+							Web / App<br />
+							Fintech<br />
+							AR / VR<br />
+							Governance<br />
+							Web3 / Blockchain<br />
+							AI / ML<br />
+							IoT & Automation<br />
+							Open Innovation
+						</p>
+					</div>
 				</div>
 			{:else}
 				<!-- Original Link-based Statement Display -->
